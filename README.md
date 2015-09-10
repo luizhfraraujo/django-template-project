@@ -7,7 +7,8 @@ A template project for django, with management app accounts and Admin LTE.
 
 Django: 1.8.4
 
-Admin LTE: 2.3.0
+Admin LTE: 2.3.0 (All plugins in static folder. You can remove if you dont use.)
+Docs https://almsaeedstudio.com/themes/AdminLTE/documentation/index.html
 
 ## Usage
 
