@@ -7,4 +7,5 @@ urlpatterns = patterns('',
     url(r'^sair/$', 'django.contrib.auth.views.logout', 
     	{'next_page': 'accounts:login'}, name='logout'),
     url(r'^criar-conta/$', 'project_name.accounts.views.register', name='register'),
+    url(r'^perfil/(?P<user>[\w_-]+)$', 'project_name.accounts.views.profile', name='profile'),
 )

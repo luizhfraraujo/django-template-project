@@ -18,6 +18,15 @@ def dashboard(request):
 	
 	return render(request,template_name, context)
 
+@login_required
+def profile(request, user):
+	template_name = 'accounts/profile.html'
+	context = {}
+	user_profile = get_object_or_404(User.objects.all, username=user)
+	#context['userprofile'] = user_profile
+	
+	return render(request,template_name, context)
+
 def register(request):
 	template_name = 'accounts/register.html'
 	form = RegisterForm(request.POST or None)
