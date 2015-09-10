@@ -18,11 +18,6 @@ def dashboard(request):
 	
 	return render(request,template_name, context)
 
-def login(request):
-	template_name = 'accounts/login.html'
-
-	return render(request, template_name)
-
 def register(request):
 	template_name = 'accounts/register.html'
 	form = RegisterForm(request.POST or None)

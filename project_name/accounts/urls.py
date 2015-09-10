@@ -5,6 +5,6 @@ urlpatterns = patterns('',
     url(r'^login/$', 'django.contrib.auth.views.login', 
     	{'template_name': 'accounts/login.html'}, name='login'),
     url(r'^sair/$', 'django.contrib.auth.views.logout', 
-    	{'next_page': 'core:home'}, name='logout'),
+    	{'next_page': 'accounts:login'}, name='logout'),
     url(r'^criar-conta/$', 'project_name.accounts.views.register', name='register'),
 )

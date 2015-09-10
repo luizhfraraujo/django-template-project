@@ -117,6 +117,11 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+#Auth
+LOGIN_URL = 'accounts:login'
+LOGIN_REDIRECT_URL = 'accounts:login'
+LOGOUT_URL = 'accounts:logout'
 AUTH_USER_MODEL = 'accounts.User'
 
 
