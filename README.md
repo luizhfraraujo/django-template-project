@@ -1,6 +1,9 @@
 # Django Template Project
 
+
 A template project for django, with management app accounts and Admin LTE.
+
+
 ==============
 ## Versions:
 Django: 1.8.4
