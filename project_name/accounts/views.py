@@ -6,10 +6,10 @@ from django.contrib import messages
 from django.conf import settings
 from project_name.core.utils import generate_hash_key
 from .forms import RegisterForm, EditAccountForm, PasswordResetForm
-from .models import UserPasswordReset
+from .models import UserPasswordReset, User
 
 # Create your views here.
-User = get_user_model
+User_Logged = get_user_model
 
 @login_required
 def dashboard(request):
@@ -22,8 +22,8 @@ def dashboard(request):
 def profile(request, user):
 	template_name = 'accounts/profile.html'
 	context = {}
-	user_profile = get_object_or_404(User.objects.all, username=user)
-	#context['userprofile'] = user_profile
+	user_profile = get_object_or_404(User,username=user)
+	context['user_profile'] = user_profile
 	
 	return render(request,template_name, context)
 
