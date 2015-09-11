@@ -15,6 +15,7 @@ User_Logged = get_user_model
 def dashboard(request):
 	template_name = 'accounts/dashboard.html'
 	context = {}
+	context['users'] = User.objects.all()
 	
 	return render(request,template_name, context)
 
