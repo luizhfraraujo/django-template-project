@@ -19,5 +19,5 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^conta/', include('project_name.accounts.urls', namespace='accounts')),
+    url(r'^conta/', include('{{project_name}}.accounts.urls', namespace='accounts')),
 ]
