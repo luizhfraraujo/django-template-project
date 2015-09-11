@@ -1,5 +1,6 @@
 from django.conf.urls import include, url
 
-urlpatterns = ['{{project_name}}.core.views',
-    url(r'^$', 'home', name='home'),
-    url(r'^contato/$', 'contact', name='contact'),]
+urlpatterns = [
+    url(r'^$', '{{project_name}}.core.views.index', name='index'),
+    url(r'^contato/$', '{{project_name}}.core.views.contact', name='contact'),
+    ]
