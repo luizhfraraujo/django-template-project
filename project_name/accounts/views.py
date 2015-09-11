@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.conf import settings
-from project_name.core.utils import generate_hash_key
+from {{project_name}}.core.utils import generate_hash_key
 from .forms import RegisterForm, EditAccountForm, PasswordResetForm
 from .models import UserPasswordReset, User
 
