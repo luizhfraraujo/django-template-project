@@ -55,7 +55,7 @@ class RegisterForm(forms.ModelForm):
 
 
 #Formulário para Edicão da conta do Usuário
-class SettingsAccountForm(forms.ModelForm):
+class EditAccountForm(forms.ModelForm):
 
 	class Meta:
 		model = User
@@ -63,4 +63,3 @@ class SettingsAccountForm(forms.ModelForm):
 		'phone_area_code','phone_numer',
 		 'zip_code','address','address_number','address_complement','address_district',
 		 'address_city']
-

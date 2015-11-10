@@ -14,3 +14,6 @@ Docs https://almsaeedstudio.com/themes/AdminLTE/documentation/index.html
 
     django-admin startproject --template=https://github.com/tir4y/django-template-project/archive/master.zip --extension=conf your_project_name
     cd your_project_name
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py syncdb
