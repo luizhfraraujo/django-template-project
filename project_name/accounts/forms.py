@@ -23,7 +23,7 @@ class PasswordResetForm(forms.Form):
 		reset = UserPasswordReset(key=key, user=user)
 		reset.save()
 		template_name = 'accounts/password_reset_mail.html'
-		subject = '[SimpleMOOC] Nova senha'
+		subject = '[Insights Corporativos] Nova senha'
 		context = {'reset':reset}
 		send_mail_template(subject,template_name, context, [user.email])
 
@@ -55,8 +55,12 @@ class RegisterForm(forms.ModelForm):
 
 
 #Formulário para Edicão da conta do Usuário
-class EditAccountForm(forms.ModelForm):
+class SettingsAccountForm(forms.ModelForm):
 
 	class Meta:
 		model = User
-		fields = ['username', 'email', 'name','user_image']
+		fields = ['user_image', 'name', 'email','facebook','twitter','linkedin',
+		'phone_area_code','phone_numer',
+		 'zip_code','address','address_number','address_complement','address_district',
+		 'address_city']
+
