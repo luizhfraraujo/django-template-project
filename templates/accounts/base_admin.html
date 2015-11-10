@@ -199,15 +199,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         {{user.name}}
                       {% endif %}
                       <small>Membro desde {{user.date_joined|date:"d/m/y"}}</small>
+                      <br/>
+                      <a href="{% url 'accounts:edit_password' %}">Alterar Senha</a>
                     </p>
                   </li>
                   <!-- Menu Body -->
                   <li class="user-body">
                     <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
+                      <a href="{% url 'accounts:edit_account' %}">Conta</a>
                     </div>
                     <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
+                      
                     </div>
                     <div class="col-xs-4 text-center">
                       <a href="#">Friends</a>

@@ -7,4 +7,12 @@ urlpatterns = [
     url(r'^sair/$', 'django.contrib.auth.views.logout', 
     	{'next_page': 'accounts:login'}, name='logout'),
     url(r'^criar-conta/$', '{{project_name}}.accounts.views.register', name='register'),
-    url(r'^perfil/(?P<user>[\w_-]+)$', '{{project_name}}.accounts.views.profile', name='profile'),]
+    url(r'^criar-conta/$', '{{project_name}}.accounts.views.register', name='register'),
+    url(r'^perfil/(?P<user>[\w_-]+)$', '{{project_name}}.accounts.views.profile', name='profile'),
+    url(r'^editar/$', '{{project_name}}.accounts.views.edit_account', name='edit_account'),
+    url(r'^alterar-senha/$', '{{project_name}}.accounts.views.edit_password', name='edit_password'),
+    url(r'^nova-senha/$', '{{project_name}}.accounts.views.password_reset', name='password_reset'),
+    url(r'^confirmar-nova-senha/(?P<key>\w+)/$', '{{project_name}}.accounts.views.password_reset_confirm', 
+        name='password_reset_confirm'),
+
+    ]

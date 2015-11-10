@@ -70,3 +70,42 @@ def password_reset_confirm(request, key):
 		context['success'] = True
 	context['form'] = form
 	return render(request, template_name, context)
+
+
+@login_required
+def edit_account(request):
+	template_name = 'accounts/edit_account.html'
+	form = EditAccountForm()
+	context = {}
+	if request.method == 'POST':
+		form = EditAccountForm(request.POST, request.FILES, instance=request.user)
+		print(request.user.username)
+		print(request.user.email)
+		print(request.user.user_image)
+		if form.is_valid():
+			form.save()
+			messages.add_message(request, messages.SUCCESS, 'Dados alterados com sucesso!')
+			#messages.success(request,'Dados alterados com sucesso!')
+			redirect('accounts:dashboard')
+	else:
+		form = EditAccountForm(instance=request.user)
+	context['form'] = form
+
+	return render(request,template_name, context)
+
+@login_required
+def edit_password(request):
+	template_name = 'accounts/edit_password.html'
+	context = {}
+	if request.method == 'POST':
+		form = PasswordChangeForm(data=request.POST,user=request.user)
+		if form.is_valid():
+			form.save()
+			messages.success(request,'Sua senha foi alterada com sucesso!')
+			context['success'] = True
+
+	else:
+		form = PasswordChangeForm(user=request.user)
+
+	context['form'] = form
+	return render(request,template_name, context)
