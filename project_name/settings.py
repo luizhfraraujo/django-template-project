@@ -90,6 +90,8 @@ DATABASES = {
     }
 }
 
+#The name of your site.
+SITE_NAME = "Django Template Project"
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
