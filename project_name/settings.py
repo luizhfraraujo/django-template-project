@@ -90,6 +90,10 @@ DATABASES = {
     }
 }
 
+
+#Site Configs
+SITE_NAME = "{{project_name}}"
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
